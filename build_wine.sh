@@ -241,6 +241,7 @@ else
 
 		tar xf "wine-${WINE_VERSION}.tar.xz"
 		mv "wine-${WINE_VERSION}" wine
+		patch -d wine -Np1 < "${scriptdir}"/0001-cmd-Prime-console-input-before-waiting-in-WCMD_wait_for_input.patch || exit 1
 	fi
 
 	if [ "${WINE_BRANCH}" = "staging" ]; then
